@@ -1,0 +1,29 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Terraform lock file - KEEP this one tracked, do not ignore
+!.terraform.lock.hcl
+
+# AWS
+.aws/
+
+# Environment/secrets
+.env
+*.pem
+*.key
+
+# OS/editor
+.DS_Store
+.vscode/
+*.swp

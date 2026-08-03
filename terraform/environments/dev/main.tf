@@ -28,3 +28,32 @@ module "vpc" {
     Project     = "cloudops-platform"
   }
 }
+
+module "iam_oidc" {
+  source = "../../modules/iam-oidc"
+
+  github_org           = "AyaanShaheer"
+  github_repo          = "cloudops-platform"
+  create_oidc_provider = true
+
+  tags = {
+    Environment = "dev"
+    Project     = "cloudops-platform"
+  }
+}
+
+module "ecr" {
+  source = "../../modules/ecr"
+
+  repository_names = [
+    "cloudops-platform-backend",
+    "cloudops-platform-frontend",
+  ]
+
+  untagged_image_expiry_days = 14
+
+  tags = {
+    Environment = "dev"
+    Project     = "cloudops-platform"
+  }
+}

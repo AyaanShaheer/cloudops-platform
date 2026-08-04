@@ -88,6 +88,9 @@ data "aws_iam_policy_document" "permissions" {
     effect = "Allow"
     actions = [
       "ecr:GetAuthorizationToken",
+      "ecr:DescribeRepositories",
+      "ecr:DescribeImages",
+      "ecr:ListImages",
       "ecr:BatchCheckLayerAvailability",
       "ecr:GetDownloadUrlForLayer",
       "ecr:BatchGetImage",
